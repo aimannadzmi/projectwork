@@ -1,3 +1,20 @@
+$( document ).ready(function() {
+
+    $("#submit").on("click", function(){
+        event.preventDefault();
+        
+        var input = $("#searchteams").val();
+        
+        console.log(input);
+        
+        $("#searchteams").val("");
+        
+
+    })
+
+
+
+
 var apiKey = '42ae06dd17e454fc09825d38b8ab43b6'
 var queryURL = 'https://api.the-odds-api.com/v3/odds?sport=basketball_nba&region=us&mkt=h2h&apiKey=42ae06dd17e454fc09825d38b8ab43b6'
 $.ajax({
@@ -22,4 +39,4 @@ $.ajax({
         }
     });
 
-
+});

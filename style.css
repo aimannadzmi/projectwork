@@ -1,0 +1,21 @@
+.jumbotron {
+	height: 200px;
+	padding-top: 20px;
+}
+
+#signin {
+	position: relative;	
+	left: 700px;
+
+}
+
+#profile {
+	position: relative;	
+	left: 700px;
+
+}
+
+form {
+	margin-left: 30px;
+	margin-bottom: 20px;
+}
