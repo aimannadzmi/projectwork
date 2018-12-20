@@ -8,11 +8,31 @@ $( document ).ready(function() {
         console.log(input);
         
         $("#searchteams").val("");
+
+        //appendTeams();
         
 
     })
 
+// function appendTeams() {
+    
+//     var apikey2 = ;
+//     var queryURL2 = :
+//     $.ajax({
+//         url: queryURL2,
+//         method: 'GET'
+//     })
+//         .then(function (response){
+//             console.log(response)
+//             //pull team data
+//             var getTeams = response.data
+//             var getScores = response.data
+            
+//             var newCol = $("<td>");
+//             newCol.append(getTeams + getScores);
 
+//         })
+// }
 
 
 var apiKey = '42ae06dd17e454fc09825d38b8ab43b6'
