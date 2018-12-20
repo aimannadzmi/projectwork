@@ -16,10 +16,11 @@
 }
 
 .currentGames {
+	width: 1000px;
+	height: 1000px;
+	border:solid;
 	margin-left: 100px;
-}
-
-.teamLogo2 {
+	padding: 20px;
 
 }
 

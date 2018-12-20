@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     
     //run the currentGames function 
-    currentGames();
+    //currentGames();
 
     //when submit button is clicked
     $("#submit").on("click", function(){
@@ -19,34 +19,34 @@ $( document ).ready(function() {
 
     })
 
-function appendTeams() {
-    var team = $("#searchteams").val().toLowerCase();
-    var apikey2 = ;
-    var queryURL2 = " " + team + apikey2;
-    $.ajax({
-        url: queryURL2,
-        method: 'GET'
-    })
-        .then(function (response){
-            console.log(response)
-            //pull team data
-            var getTeams = response.data
-            var getScores = response.data
+// function appendTeams() {
+//     var team = $("#searchteams").val().toLowerCase();
+//     var apikey2 = ;
+//     var queryURL2 = " " + team + apikey2;
+//     $.ajax({
+//         url: queryURL2,
+//         method: 'GET'
+//     })
+//         .then(function (response){
+//             console.log(response)
+//             //pull team data
+//             var getTeams = response.data
+//             var getScores = response.data
             
-            var newCol = $("<td>");
-            newCol.append(getTeams + getScores);
+//             var newCol = $("<td>");
+//             newCol.append(getTeams + getScores);
 
-        })
-}
+//         })
+// }
 
-function appendScores() {
+// function appendScores() {
 
-}
+// }
 
-//when user first loads page
-function currentGames() {
+// //when user first loads page
+// function currentGames() {
 
-}
+// }
 
 
 //betting odds api
