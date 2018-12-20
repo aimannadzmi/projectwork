@@ -21,6 +21,8 @@
 	border:solid;
 	margin-left: 100px;
 	padding: 20px;
+	float:left;
+	position: absolute;
 
 }
 
@@ -44,17 +46,19 @@ table th {
 form {
 	margin-left: 30px;
 	margin-bottom: 20px;
+
 }
 
-#displayScores {
+/*#displayScores {
 	margin-left: 45px;
 	float: left;
 	position: absolute;
 }
-
+*/
 #displayOdds {
 	margin-right: 100px;
 	float: right;
 	position: relative;
+	border: solid;
 
 }
