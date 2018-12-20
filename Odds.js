@@ -8,11 +8,15 @@ $( document ).ready(function() {
         console.log(input);
         
         $("#searchteams").val("");
+
+        appendTeams();
         
 
     })
 
-
+function appendTeams() {
+    
+}
 
 
 var apiKey = '42ae06dd17e454fc09825d38b8ab43b6'
