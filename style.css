@@ -15,11 +15,10 @@
 
 }
 
-.currentGames {
+#currentGames {
 	width: 1000px;
 	height: 1000px;
-	border:solid;
-	margin-left: 100px;
+	margin-left: 20px;
 	padding: 20px;
 	float:left;
 	position: absolute;
@@ -49,16 +48,20 @@ form {
 
 }
 
-/*#displayScores {
-	margin-left: 45px;
-	float: left;
-	position: absolute;
+#dropdown{
+	text-align: left;
 }
-*/
+
+
+
+#teamSel {
+	position: absolute;
+	margin-left: 100px;
+}
+
 #displayOdds {
 	margin-right: 100px;
 	float: right;
 	position: relative;
-	border: solid;
 
 }

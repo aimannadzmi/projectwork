@@ -1,75 +1,70 @@
 <!DOCTYPE html>
-<html lang= 'en-us'>
-    <head>
-        <!-- jQuery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!-- Javascript  -->
-        <script src='Odds.js'></script>
-        <!-- Bootstrap CDN-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <!-- CSS -->
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!-- Jumbotron -->
-        <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <a id="signin" href="www.google.com">Sign In</a>                        <br>
-                    <a id="profile" href="www.google.com">My Profile</a>
-                    <h1 class="display-4">Fluid jumbotron</h1>
-                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-                </div>
+<html lang='en-us'>
+
+<head>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Javascript  -->
+    <script src='Odds.js'></script>
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <a id="signin" href="www.google.com">Sign In</a> <br>
+            <a id="profile" href="www.google.com">My Profile</a>
+            <h1 class="display-4">Bet Buddy</h1>
+            <p class="lead"></p>
         </div>
-                
-        <br>
-       <!-- form to search teams -->
-        <form> Search Teams: 
-            <input id="searchteams" type=text>
-            <button id="submit">Search</button>
-        </form>
-        <!-- navbar -->
-        <div id="navbar" class= 'container'>
-            <div class= 'row'>
-                <div class= 'col-sm-2'>
-                    <a id= 'page' href= "index.html">Home</a>
-                </div>
-                <div class= 'col-sm-2'>
-                    <a id= 'page' href= "index.html">Scores</a>
-                </div>
-                <div class= 'col-sm-2'>
-                    <a id= 'page' href= "index.html">Team</a>
-                </div>
-                <div class= 'col-sm-2'>
-                    <a id= 'page' href= "index.html">Sports</a>
-                </div>
+    </div>
+
+   <!-- navbar -->
+   <div id="navbar" class='container'>
+    <div class='row'>
+        <div class='col-sm-2'>
+            <a id='page' href="index.html">Home</a>
+        </div>
+        <div class='col-sm-2'>
+            <a id='page' href="index.html">Scores</a>
+        </div>
+        <div class='col-sm-2'>
+            <a id='page' href="index.html">Team</a>
+        </div>
+        <div class='col-sm-2'>
+            <a id='page' href="index.html">Sports</a>
+        </div> 
+        <div id="dropdown" class='col-sm-2'>
+            <select class="form-control form-control-sm" id='teamSel'>
+                <option>Select Your Team</option>
+            </select>
+            <button id="submitTeam">Submit</button>
+        </div>
+    </div>
+</div>
+
+    <br>
+    <br>
+    <div class='container'>
+        <!-- Current Game Stats -->
+        <div class='container'>
+            <!-- Current Game Stats -->
+            <div class="col-lg-7" id="currentGames">
+                <h3>Current Games</h3>
+            </div>
+            <div class="col-lg-7" id="defaultGames">
+                <h3>Default Games</h3>
+            </div>
+            <br>
+            <div class="col-lg-3" id="displayOdds">
+                <h3>Betting Odds</h3>
+    
             </div>
         </div>
-        <br>
-
-        <!-- Current Game Stats -->
-        <div class="currentGames">
-            Current Games
-        </div>
-        <!-- display game stats -->
-        <!-- <div class="col-md-7" id="displayScores">
-            <table>
-                <tr>
-                    <th>Team</th>
-                    <th>Stats</th>
-                    <th>Other</th>
-                </tr> 
-            </table>
-        </div -->>
-        
-        <div class="col-md-1"></div>
-        
-        <div class="col-md-3" id="displayOdds">Betting Odds
-            <table>
-                <tr>
-                </tr> 
-            </table>
-        </div>
-    
-    </body>
+</body>
 
 </html>
