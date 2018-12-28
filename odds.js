@@ -55,15 +55,18 @@ $(document).ready(function () {
             url: queryURL3,
             method: "GET"
         }).then(function (response3) {
-            console.log(response3)
+            console.log(response3);
             console.log(response3.events[0].strFilename)
             for (var i = 0; i < 5; i++) {
                 var newGame2 = $('<div>');
+                newGame2.attr("id", "newgame2");
+                var newRow = $("<tr>");
 
                 var game2 = response3.events[i].strFilename;
                 var home2 = response3.events[i].strHomeTeam + ": " + response3.events[i].intHomeScore;
                 var away2 = response3.events[i].strAwayTeam + ": " + response3.events[i].intAwayScore;
                 newGame2.html('<br>'+ game2 + '<br>' + home2 + '<br>' + away2);
+
 
                 $('#defaultGames').append(newGame2)
             }
@@ -120,6 +123,7 @@ defaultGames();
 
             for (var i = 0; i < response2.results.length; i++) {
                 var newGame = $('<div>');
+                newGame.attr("id", "newgame");
 
                 var game = response2.results[i].strFilename;
                 var home = response2.results[i].strHomeTeam + ": " + response2.results[i].intHomeScore;
@@ -134,9 +138,7 @@ defaultGames();
 
 
     }
-
-
-    
+ 
 
 
     //betting odds api
@@ -160,7 +162,7 @@ defaultGames();
                     console.log('fetch sites: ' + fetchSites)
                 }else{
                     continue
-                }
+                }                                                                
                 var fetchOdds = fetch[i].sites[0].odds.spreads.odds;
                 var getSpread = fetch[i].sites[0].odds.spreads.points;
                 var visitorTeam = fetch[i].teams[0];
@@ -176,10 +178,10 @@ defaultGames();
                 var newRow = $("<tr>");
                 var newCol = $("<td>");
                 newCol.attr("id", "newcol");
-                newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "Source: " + fetchSites);
+                newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "<br>Source: " + fetchSites);
                 newRow.append(newCol);
                 $("#displayOdds").append(newRow);
             }
         });
 
-});
+})

@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Staatliches" rel="stylesheet">
+    <!-- Media Query -->
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -23,48 +27,63 @@
         </div>
     </div>
 
-   <!-- navbar -->
    <div id="navbar" class='container'>
     <div class='row'>
-        <div class='col-sm-2'>
-            <a id='page' href="index.html">Home</a>
-        </div>
-        <div class='col-sm-2'>
-            <a id='page' href="index.html">Scores</a>
-        </div>
-        <div class='col-sm-2'>
-            <a id='page' href="index.html">Team</a>
-        </div>
-        <div class='col-sm-2'>
-            <a id='page' href="index.html">Sports</a>
-        </div> 
-        <div id="dropdown" class='col-sm-2'>
-            <select class="form-control form-control-sm" id='teamSel'>
+            <div class='col-sm-2'>
+                <a id='page' href="index.html">Home</a>
+            </div>
+            <div class='col-sm-2'>
+                <a id='page' href="index.html">Scores</a>
+            </div>
+            <div class='col-sm-2'>
+                <a id='page' href="index.html">Team</a>
+            </div>
+            <div class='col-sm-2'>
+                <a id='page' href="index.html">Sports</a>
+            </div> 
+            <div id="dropdown" class='col-sm-2'>
+                <select class="form-control form-control-sm" id='teamSel'>
                 <option>Select Your Team</option>
-            </select>
-            <button id="submitTeam">Submit</button>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" id="submitTeam" class="btn btn-light">Submit</button>
+            </div>
         </div>
     </div>
-</div>
-
     <br>
     <br>
-    <div class='container'>
-        <!-- Current Game Stats -->
-        <div class='container'>
+        <!-- <div class='container'> -->
             <!-- Current Game Stats -->
-            <div class="col-lg-7" id="currentGames">
+            <div class="col-lg-6" id="currentGames">
                 <h3>Current Games</h3>
+                <!-- <table id="currentgames1">
+                    <tr>
+                        <th >Date</th>
+                        <th id="overview">Game Overview</th>
+                    </tr>
+                    <tr>
+                    </tr>
+
+                </table>-->
             </div>
-            <div class="col-lg-7" id="defaultGames">
+            <div class="col-lg-6" id="defaultGames">
                 <h3>Default Games</h3>
+                <!-- <table id="defaultGames1"> -->
+                <!-- <tr>
+                        <th >Date</th>
+                        <th id="overview">Game Overview</th>
+                    </tr>
+                < /table>-->
             </div>
             <br>
             <div class="col-lg-3" id="displayOdds">
                 <h3>Betting Odds</h3>
     
             </div>
-        </div>
+        <!-- </div> -->
+       <!--  <a href="#show" class="show-btn" id="show">Show All Available Bets</a> 
+        <a href="#hide" class="hide-btn" id="hide">Hide</a>  -->
 </body>
 
 </html>

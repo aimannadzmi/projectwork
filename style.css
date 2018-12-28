@@ -1,17 +1,45 @@
+body {
+	/*background-color: white;
+	background-image: url("assets/images/court1.jpg");
+	background-size: auto;
+*/}
 .jumbotron {
 	height: 200px;
 	padding-top: 20px;
 	margin-bottom: 10px;
+	margin-top: 10px;
+	color: white;
+	font-family: 'Staatliches', cursive;
+	background-image: url("assets/bbball.jpg");
+	background-attachment: fixed;
+	/*background-repeat: no-repeat;*/
+	/*background-size: auto;*/
+	/*resize: both;*/
 }
 
 #navbar {
-	border: solid;
-	padding: 5px;
+	padding-top: 15px;
+	padding-bottom: 10px;
+	color: white;
+	background-color: white;
+	font-family: 'Anton', sans-serif;
+	letter-spacing: .08em;
+	font-size: 18px;
+	/*background-image: url("assets/images/bzll.jpeg");*/
 }
 
 #signin {
 	position: relative;	
-	left: 900px;
+	left: 1000px;
+	color: white;
+
+}
+
+#defaultGames {
+	margin-left: 20px;
+	padding: 20px;
+	float:left;
+	position: absolute;
 
 }
 
@@ -25,13 +53,19 @@
 
 }
 
+#overview {
+	width: 400px;
+	text-align: center;
+}
+
 #searchteams {
 	margin-bottom: 20px;
 }
 
 #profile {
 	position: relative;	
-	left: 900px;
+	left: 1000px;
+	color: white;
 
 }
 
@@ -48,6 +82,17 @@ form {
 
 }
 
+#submitTeam {
+	font-size: 12px;
+	float: right;
+	
+}
+
+#page {
+	color: orange;
+	word-spacing: 10px;
+}
+
 #dropdown{
 	text-align: left;
 }
@@ -55,13 +100,80 @@ form {
 
 
 #teamSel {
-	position: absolute;
 	margin-left: 100px;
+	font-family: 'Anton', sans-serif;
 }
 
 #displayOdds {
-	margin-right: 100px;
+	margin-right: 200px;
 	float: right;
 	position: relative;
+  	/*margin: 2em auto;
+  	width: 70%;
+  	max-height: 400px;
+  	overflow: hidden;
+  	transition: max-height .5s ease;*/
+}
+
+
+#newcol {
+	border: solid;
+	border-color: grey;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+#newgame2 {
+	border: solid;
+	border-color: grey;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+#newgame {
+	border: solid;
+	border-color: grey;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+/*.show-btn, .hide-btn {
+  color: black;
+  background: white;
+  border-radius: 1.5em;
+  right: 10%;
+  padding: 1em;
+  text-decoration: none;
+  width: 10%;
+}
+
+#show, #hide {
+  position: absolute;
+  bottom: -1em;
+  z-index: 800;
+  text-align: center;
+}
+
+.hide {display: none;}
+.show:target {display: none;}
+.show:target ~ .hide {display: block;}
+.show:target ~ .panel {
+   max-height: 2000px; 
+}
+.show:target ~ .fade {
+  margin-top: 0;
+}*/
+
+
+@media screen and (min-width: 1400px) {
+
+    #container { 
+    	width: 100% 
+    }
+
+    .display-4 {
+    	left: 80px;
+    	position: fixed;
+    }
 
 }
