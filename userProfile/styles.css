@@ -1,0 +1,80 @@
+
+input{
+    border: none;
+    border-bottom: 2px solid black;
+    width: 55%
+}
+.btn-dark{
+    margin-bottom: 8px;
+    margin-right: 2px;
+}
+.container{
+   margin-bottom: 25px;
+}
+#marginTop{
+    margin-top: 50px
+}
+#removeSelected{
+    float: right;
+}
+#showPassword{
+    width: auto;
+    margin: 5px;
+}
+.jumbotron{
+    margin-bottom: 0px;
+}
+.col-sm-5{
+    background-color:lightgray;
+    margin-right: 10px;
+}
+.col-sm-3{
+    background-color:lightsalmon;
+}
+#signin {
+	position: relative;	
+    left: 90%;
+    top: -75px;
+}
+#logout{
+	position: relative;	
+	left: 90%;
+    top: -75px;
+}
+#navbar {
+	border: solid;
+    padding: 0px;
+    width: 100%;
+    margin-right: 31%;
+    background-color: lightgray;
+}
+strong{
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    bottom: -1px
+}
+#scoreC{
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightgreen;
+    position: relative;
+    bottom: -1px
+}
+#scoreI{
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightsteelblue;
+    position: relative;
+    bottom: -1px
+}
+.carousel-inner{
+    background-color: lightgray;
+    height: 30px;
+}
+.col-sm-1{
+    position: relative;
+    bottom: -6px
+}
