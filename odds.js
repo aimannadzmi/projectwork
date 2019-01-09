@@ -121,7 +121,7 @@ $(document).ready(function () {
                 var homeImage = $("<img>");
                 var awayImage = $("<img>");
                 homeImage.attr("src", "images/" + homeTeamName + ".gif" );
-                awayImage.attr("src", awayTeamName + ".gif");
+                awayImage.attr("src", "images/" + awayTeamName + ".gif");
 
                 console.log(homeTeamName);
 
@@ -129,10 +129,14 @@ $(document).ready(function () {
                 home.append(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore);
                 away.html(awayTeamCity + ' ' + awayTeamName + ': ' + awayTeamScore);
 
-                $("#defaultGames").append(homeImage);
                 $('#defaultGames').append(game)
                 $('#defaultGames').append(home)
                 $('#defaultGames').append(away)
+
+
+
+                $("#defaultGames").append(homeImage, "<div class='vs'> vs.  </div>", awayImage);
+               
             }
         })
 

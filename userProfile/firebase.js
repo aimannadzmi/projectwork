@@ -264,7 +264,7 @@ $(document).ready(function () {
             } else {
                 userTeams = userTeams
             }
-            console.log(userTeams);
+            // console.log(userTeams);
             // add code to put user teams stats and betting odds
             getTeamId(userTeams);
 
