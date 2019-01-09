@@ -9,7 +9,7 @@
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	/*background-size: auto;*/
-	resize: both;
+	/*resize: both;*/
 }
 
 #navbar {
@@ -121,7 +121,6 @@ strong{
     position: relative;
     bottom: -1px
 }
-
 #scoreI{
     border: 2px solid black;
     padding-right: 2px;

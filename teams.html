@@ -17,6 +17,8 @@
     <script src='userProfile/firebase.js'></script>
     <!-- CSS -->
     <link rel='stylesheet' href='style.css'>
+     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Staatliches" rel="stylesheet">
 </head>
 
 <body>
@@ -25,7 +27,7 @@
         <div class="container">
             <a id="signin" href="userprofile/signIn.html">Sign In</a>
             <a id="logout" href="index.html">Log Out</a>
-            <h1 class="display-4">Bet Buddy</h1>
+            <h1 id="bet" class="display-4">Bet Buddy</h1>
             <p class="lead"></p>
         </div>
     </div>
@@ -55,12 +57,15 @@
     </div>
 </div>
 <div class= 'container'>
+    
     <div id="dropdown" class='col-sm-2'>
-        <select class="form-control form-control-sm" id='teamSel'>
-            <option>Select Your Team</option>
-        </select>
-        <button id="submitTeam">Submit</button>
-    </div>
+                <select class="form-control form-control-sm" id='teamSel'>
+                <option>Select Your Team</option>
+                </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="button" id="submitTeam" class="btn btn-light">Submit</button>
+            </div>
 </div>
     <br>
     <br>

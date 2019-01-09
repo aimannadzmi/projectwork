@@ -1,3 +1,14 @@
+.jumbotron {
+    height: 200px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    background-image: url("bbball.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
 
 input{
     border: none;
@@ -24,6 +35,7 @@ input{
 .jumbotron{
     margin-bottom: 0px;
 }
+.col-sm-8 {}
 .col-sm-5{
     background-color:lightgray;
     margin-right: 10px;
@@ -41,12 +53,19 @@ input{
 	left: 90%;
     top: -75px;
 }
+#page {
+    color: orange;
+}
 #navbar {
-	border: solid;
-    padding: 0px;
-    width: 100%;
-    margin-right: 31%;
-    background-color: lightgray;
+    border: solid;
+    border-color: white;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    color: black;
+    background-color: white;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: .09em;
+    font-size: 18px;
 }
 strong{
     padding-right: 10px;

@@ -8,8 +8,6 @@
 	background-image: url("bbball.jpg");
 	background-attachment: fixed;
 	background-repeat: no-repeat;
-	/*background-size: auto;*/
-	resize: both;
 }
 
 #navbar {
@@ -17,100 +15,22 @@
 	border-color: white;
 	/*padding: 0px;*/
 	padding-top: 15px;
-	padding-bottom: 13px;
+	padding-bottom: 20px;
 	color: black;
 	background-color: white;
 	font-family: 'Anton', sans-serif;
 	letter-spacing: .09em;
 	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+#usersignin {
+	margin-top: 20px;	
 }
 
 #page {
 	color: orange;
 	word-spacing: 10px;
-}
-
-#signin {
-	position: relative;	
-	/*left: 90%;*/
-	position: relative;	
-	left: 1000px;
-	color: white;
-}
-
-#logout{
-	position: relative;	
-	left: 90%;
-}
-
-#currentGames {
-	width: 1000px;
-	height: 1000px;
-	margin-left: 20px;
-	padding: 20px;
-	float:left;
-	position: absolute;
-
-}
-
-#defaultGames {
-	margin-left: 20px;
-	padding: 20px;
-	float:left;
-	position: absolute;
-
-}
-
-#searchteams {
-	margin-bottom: 20px;
-}
-
-#profile {
-	position: relative;	
-	left: 900px;
-
-}
-
-table th {
-	text-align: left;
-	padding: 20px;
-	border: solid;
-
-}
-
-form {
-	margin-left: 30px;
-	margin-bottom: 20px;
-
-}
-
-#dropdown{
-	text-align: left;
-}
-
-
-
-#teamSel {
-	position: absolute;
-	margin-left: 100px;
-	font-family: 'Anton', sans-serif;
-}
-
-#displayOdds {
-	margin-right: 100px;
-	float: right;
-	position: relative;
-
-}
-.selectedTeam{
-	margin: 10px;
-}
-
-strong{
-    padding-right: 10px;
-    padding-left: 10px;
-    position: relative;
-    bottom: -1px
 }
 
 #scoreC {
@@ -121,7 +41,6 @@ strong{
     position: relative;
     bottom: -1px
 }
-
 #scoreI{
     border: 2px solid black;
     padding-right: 2px;
@@ -138,6 +57,13 @@ strong{
     bottom: -6px
 }
 
+strong{
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    bottom: -1px
+}
+
 #bet {
 font-family: 'Staatliches', cursive;
 }
@@ -148,7 +74,7 @@ font-family: 'Staatliches', cursive;
     	width: 100% 
     }
 
-    .display-4 {
+    #title {
     	left: 80px;
     	position: fixed;
     }

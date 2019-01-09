@@ -9,7 +9,8 @@
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	/*background-size: auto;*/
-	resize: both;
+	/*resize: both;*/
+	font-size: 40px;
 }
 
 #navbar {
@@ -88,7 +89,9 @@ form {
 	text-align: left;
 }
 
-
+#title {
+	margin-top: 20px;
+}
 
 #teamSel {
 	position: absolute;
@@ -104,6 +107,10 @@ form {
 }
 .selectedTeam{
 	margin: 10px;
+}
+
+.col-lg-8 {
+	margin-top: 20px;
 }
 
 strong{
