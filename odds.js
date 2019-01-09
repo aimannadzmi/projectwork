@@ -4,23 +4,24 @@ $(document).ready(function () {
 
     var nbaBtn = ['Lakers', 'Suns', 'Knicks', 'Pacers', 'Spurs', 'Rockets', 'Warriors', 'Kings', 'Clippers', 'Thunder', 'Wizards', 'Timberwolves', 'Hornets', 'Jazz', 'Nets', 'Pistons', 'Trail_Blazers', 'Pelicans', 'Hawks', 'Grizzlies', 'Magic', 'Bucks', 'Bulls', 'Maverics', '76ers', 'Cavaliers', 'Celtics', 'Raptors', 'Nuggets', 'Heat'];
     var nbaCities = ['Los_Angeles_', 'Phoenix_', 'New_York_', 'Indiana_', 'San_Antonio_', 'Houston_', 'Golden_State_', 'Sacramento_', 'Los_Angeles_', 'Oklahoma_City_', 'Washington_', 'Minnisota_', 'Charlotte_', 'Utah_', 'New_Jersey_', 'Detroit_', 'Portland_', 'New_Orleans', 'Atlanta_', 'Memphis_', 'Orlando_', 'Milwaukee_', 'Chicago_', 'Dallas_', 'Philadelphia_', 'Clevland', 'Boston_', 'Toronto_', 'Denver_', 'Miami_']
-    function appendOptions(array, array2, appendHere) {
+    var nbaShort= ['lal', 'phx', 'nyk', 'ind','sas','hou', 'gsw', 'sac', 'lac', 'okc', 'was', 'min', 'cha', 'uta', 'bkn', 'det', 'por', 'nop', 'atl', 'mem', 'orl', 'mil', 'chi', 'dal', 'phi', 'cle', 'bos', 'tor', 'den', 'mia']
+    function appendOptions(array, array2, array3, appendHere) {
         for (var i = 0; i < array.length; i++) {
             //append the option
             appendHere;
             var option = $('<option>');
-            option.attr('value', array2[i] + array[i]);
+            option.attr('value', array3[i]);
             option.text(array[i]);
             appendHere.append(option)
         }
     };
-    appendOptions(nbaBtn, nbaCities, $("#teamSel"));
+    appendOptions(nbaBtn, nbaCities, nbaShort, $("#teamSel"));
 
     //when submit button is clicked
     $("#submit").on("click", function () {
         event.preventDefault();
         var input = $("#searchteams").val();
-        console.log(input);
+        // console.log(input);
         $("#searchteams").val("");
         //appendTeams();
         //appendScores();
@@ -30,107 +31,202 @@ $(document).ready(function () {
 
     function hidebuttons(selectedGroup, question) {
         if (question === true) {
-            console.log("Hiding- " + selectedGroup)
+            // console.log("Hiding- " + selectedGroup)
             selectedGroup.hide()
         } else if (question === false) {
-            console.log("Showing- " + selectedGroup)
+            // console.log("Showing- " + selectedGroup)
             selectedGroup.show()
         }
     };
 
+    function teamRankings() {
+
+        $.ajax
+        ({
+          method: "GET",
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/overall_team_standings.json',
+          dataType: 'json',
+          async: false,
+          headers: {
+            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+          },
+
+        }).then(function (response) {
+            // console.log(response);
+            // console.log(response.overallteamstandings.teamstandingsentry[0].team.City);
+            for (var i = 0; i < response.overallteamstandings.teamstandingsentry.length; i++) {
+                var newEntry = $('<div>');
+
+                var rank = response.overallteamstandings.teamstandingsentry[i].rank;
+                var city = response.overallteamstandings.teamstandingsentry[i].team.City;
+                var team = response.overallteamstandings.teamstandingsentry[i].team.Name;
+
+                newEntry.html('<br>' + 'Team Rank: ' + rank + '<br>' + 'Team: ' + city + ' ' + team)
+
+                $('#defaultGames').append(newEntry)
+            }
+        })
+
+    };
+    teamRankings();
 
     function defaultGames() {
 
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
 
-        var queryURL3 = 'https://www.thesportsdb.com/api/v1/json/1/eventspastleague.php?id=4387'
+        if (dd < 10) {
+        dd = '0' + dd;
+        }
 
+        if (mm < 10) {
+        mm = '0' + mm;
+        }
 
-        $.ajax({
-            url: queryURL3,
-            method: "GET"
-        }).then(function (response3) {
-            console.log(response3)
-            console.log(response3.events[0].strFilename)
-            for (var i = 0; i < 5; i++) {
-                var newGame2 = $('<div>');
+        today = yyyy + mm + dd;
+        console.log('today is: ' + today);
 
-                var game2 = response3.events[i].strFilename;
-                var home2 = response3.events[i].strHomeTeam + ": " + response3.events[i].intHomeScore;
-                var away2 = response3.events[i].strAwayTeam + ": " + response3.events[i].intAwayScore;
-                newGame2.html('<br>' + game2 + '<br>' + home2 + '<br>' + away2);
+        $.ajax
+        ({
+          method: "GET",
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/scoreboard.json?fordate=20190107',
+          dataType: 'json',
+          async: false,
+          headers: {
+            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+          },
 
-                $('#defaultGames').append(newGame2)
+        }).then(function (response) {
+            for (var i = 0; i < response.scoreboard.gameScore.length; i++) {
+                var game = $('<div>');
+                var home = $('<div>');
+                var away = $('<div>');
+
+                var homeTeamCity = response.scoreboard.gameScore[i].game.homeTeam.City;
+                var homeTeamName = response.scoreboard.gameScore[i].game.homeTeam.Name;
+
+                var awayTeamCity = response.scoreboard.gameScore[i].game.awayTeam.City;
+                var awayTeamName = response.scoreboard.gameScore[i].game.awayTeam.Name;
+
+                var homeTeamScore = response.scoreboard.gameScore[i].homeScore;
+                var awayTeamScore = response.scoreboard.gameScore[i].awayScore;
+
+                var gameDate = response.scoreboard.gameScore[i].game.date;
+                var gameTime = response.scoreboard.gameScore[i].game.time;
+
+                game.html('<br>' + gameDate + ' ' + gameTime);
+                home.html(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore);
+                away.html(awayTeamCity + ' ' + awayTeamName + ': ' + awayTeamScore);
+
+                $('#defaultGames').append(game)
+                $('#defaultGames').append(home)
+                $('#defaultGames').append(away)
             }
-
         })
 
-
-
-    }
+    };
     defaultGames();
 
+    var teamAbb;
 
-
-
-    function getTeamId() {
+    function pullGames() {
         $('#submitTeam').on('click', function () {
             hidebuttons($('#defaultGames'), true);
             hidebuttons($('#currentGames'), false);
-            var teamName = $('#teamSel').val().trim();
-            localStorage.setItem('teamSelected', teamName);
+        teamAbb = $('#teamSel').val().trim()
+        var date = 'since-2-weeks-ago'
 
-            console.log("local Storage: " + localStorage.getItem('teamSelected'));
-            var queryURL = 'https://www.thesportsdb.com/api/v1/json/1/searchteams.php?t=' + localStorage.getItem('teamSelected');
+        $.ajax
+        ({
+          method: "GET",
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/team_gamelogs.json?team=' + teamAbb + '&date=' + date,
+          dataType: 'json',
+          async: false,
+          headers: {
+            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+          },
 
-
-            $.ajax({
-                url: queryURL,
-                method: "GET"
-            }).then(function (response) {
-                console.log(response);
-
-                var teamId = response.teams[0].idTeam;
-                console.log(response.teams[0].idTeam)
-                console.log(teamId)
-                pullGames(teamId);
-            })
-        });
-
-
-    }
-
-    getTeamId();
-    function pullGames(teamId) {
-
-
-        var queryURL2 = "https://www.thesportsdb.com/api/v1/json/1/eventslast.php?id=" + teamId;
-
-
-        $.ajax({
-            url: queryURL2,
-            method: "GET"
         }).then(function (response2) {
 
-            for (var i = 0; i < response2.results.length; i++) {
-                var newGame = $('<div>');
+        $('#currentGames').empty();
+        for (var i = 1; i < response2.teamgamelogs.gamelogs.length; i++) {
 
-                var game = response2.results[i].strFilename;
-                var home = response2.results[i].strHomeTeam + ": " + response2.results[i].intHomeScore;
-                var away = response2.results[i].strAwayTeam + ": " + response2.results[i].intAwayScore;
-                newGame.html('<br>' + game + '<br>' + home + '<br>' + away);
+            var game = $('<p>')
+            var team = $('<p>')
+            var otherTeam = $('<p>')
+            
 
-                $('#currentGames').append(newGame)
+            var homeTeamCity = response2.teamgamelogs.gamelogs[i].game.homeTeam.City;
+            var homeTeamName = response2.teamgamelogs.gamelogs[i].game.homeTeam.Name;
+
+            var awayTeamCity = response2.teamgamelogs.gamelogs[i].game.awayTeam.City;
+            var awayTeamName = response2.teamgamelogs.gamelogs[i].game.awayTeam.Name;
+
+            var teamScore = response2.teamgamelogs.gamelogs[i].stats.Pts['#text'];
+            var teamScoreAgainst = response2.teamgamelogs.gamelogs[i].stats.PtsAgainst['#text'];
+
+            var gameDate = response2.teamgamelogs.gamelogs[i].game.date;
+            var gameTime = response2.teamgamelogs.gamelogs[i].game.time;
+
+            if (teamAbb.toUpperCase() == response2.teamgamelogs.gamelogs[i].game.homeTeam.Abbreviation) {
+                team.text(homeTeamCity + ' ' + homeTeamName + ': ' + teamScore);
+                otherTeam.text(awayTeamCity + ' ' + awayTeamName + ': ' + teamScoreAgainst);
+            } else {
+                team.text(awayTeamCity + ' ' + awayTeamName + ': ' + teamScoreAgainst);
+                otherTeam.text(homeTeamCity + ' ' + homeTeamName + ': ' + teamScore)
             }
+
+            game.text(gameDate + ' ' + gameTime);
+            
+            
+            $('#currentGames').append(game, '<br>', team, '<br>', otherTeam);
+
+            
+        }
 
         })
 
 
-
+    })
     }
+    pullGames();
 
+    function injuries() {
+        $('#submitTeam').on('click', function () {
+        
+            teamAbb = $('#teamSel').val().trim()
 
+        $.ajax
+        ({
+          method: "GET",
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/player_injuries.json?team=' + teamAbb,
+          dataType: 'json',
+          async: false,
+          headers: {
+            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+          },
 
+        }).then(function (response) {
+            console.log(response.playerinjuries.playerentry[0]);
+            
+            for (var i = 0; i < response.playerinjuries.playerentry.length; i++) {
+                var newEntry = $('<div>');
 
+                var fn = response.playerinjuries.playerentry[i].player.FirstName;
+                var ln = response.playerinjuries.playerentry[i].player.LastName;
+                var injury = response.playerinjuries.playerentry[i].injury;
+                
+                newEntry.html(fn + ' ' + ln + '<br>' + injury)
+
+                $('#playerInjury').prepend(newEntry, '<br>')
+            }
+
+        })
+    })
+    };
+    injuries();
 
     //betting odds api
     var apiKey = 'f19092ccab23fca0c43360e65380f0b8'
@@ -140,17 +236,17 @@ $(document).ready(function () {
         method: 'GET'
     })
         .then(function (response) {
-            console.log(response)
+            // console.log(response)
             var fetch = response.data
-            console.log(response.data.length)
+            // console.log(response.data.length)
             for (var i = 0; i < response.data.length; i++) {
-                console.log('Sites.lenght: ' + fetch[i].sites.length);
+                // console.log('Sites.lenght: ' + fetch[i].sites.length);
                 var homeTeam = fetch[i].home_team;
                 var fetchSites;
 
                 if (fetch[i].sites.length > 0) {
                     fetchSites = fetch[i].sites[0].site_key;
-                    console.log('fetch sites: ' + fetchSites)
+                    // console.log('fetch sites: ' + fetchSites)
                 } else {
                     continue
                 }
@@ -161,10 +257,10 @@ $(document).ready(function () {
                 var fetchHOdds = fetchOdds[1];
                 var getVSpread = getSpread[0];
                 var getHSpread = getSpread[1];
-                console.log(homeTeam);
-                console.log(fetchSites);
-                console.log(fetchOdds);
-                console.log(getSpread);
+                // console.log(homeTeam);
+                // console.log(fetchSites);
+                // console.log(fetchOdds);
+                // console.log(getSpread);
 
                 var newRow = $("<tr>");
                 var newCol = $("<td>");
