@@ -3,6 +3,7 @@ body {
 	background-image: url("assets/images/court1.jpg");
 	background-size: auto;
 */}
+
 .jumbotron {
 	height: 200px;
 	padding-top: 20px;
@@ -12,7 +13,7 @@ body {
 	font-family: 'Staatliches', cursive;
 	background-image: url("assets/bbball.jpg");
 	background-attachment: fixed;
-	/*background-repeat: no-repeat;*/
+	background-repeat: no-repeat;
 	/*background-size: auto;*/
 	/*resize: both;*/
 }
