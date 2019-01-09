@@ -63,7 +63,7 @@ $(document).ready(function () {
 
                 newEntry.html('<br>' + 'Team Rank: ' + rank + '<br>' + 'Team: ' + city + ' ' + team)
 
-                $('#defaultGames').append(newEntry)
+                // $('#defaultGames').append(newEntry)
             }
         })
 
@@ -99,10 +99,12 @@ $(document).ready(function () {
           },
 
         }).then(function (response) {
+            console.log(response)
             for (var i = 0; i < response.scoreboard.gameScore.length; i++) {
                 var game = $('<div>');
                 var home = $('<div>');
                 var away = $('<div>');
+
 
                 var homeTeamCity = response.scoreboard.gameScore[i].game.homeTeam.City;
                 var homeTeamName = response.scoreboard.gameScore[i].game.homeTeam.Name;
@@ -116,10 +118,18 @@ $(document).ready(function () {
                 var gameDate = response.scoreboard.gameScore[i].game.date;
                 var gameTime = response.scoreboard.gameScore[i].game.time;
 
+                var homeImage = $("<img>");
+                var awayImage = $("<img>");
+                homeImage.attr("src", "images/" + homeTeamName + ".gif" );
+                awayImage.attr("src", awayTeamName + ".gif");
+
+                console.log(homeTeamName);
+
                 game.html('<br>' + gameDate + ' ' + gameTime);
-                home.html(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore);
+                home.append(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore);
                 away.html(awayTeamCity + ' ' + awayTeamName + ': ' + awayTeamScore);
 
+                $("#defaultGames").append(homeImage);
                 $('#defaultGames').append(game)
                 $('#defaultGames').append(home)
                 $('#defaultGames').append(away)

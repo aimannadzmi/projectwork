@@ -35,7 +35,7 @@ input{
 .jumbotron{
     margin-bottom: 0px;
 }
-.col-sm-8 {}
+
 .col-sm-5{
     background-color:lightgray;
     margin-right: 10px;
@@ -90,7 +90,7 @@ strong{
     bottom: -1px
 }
 .carousel-inner{
-    background-color: lightgray;
+    background-color: orange;
     height: 30px;
 }
 .col-sm-1{

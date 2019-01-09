@@ -88,7 +88,9 @@ form {
 	text-align: left;
 }
 
-
+.col-sm-8 {
+	background-color: orange;
+}
 
 #teamSel {
 	position: absolute;
