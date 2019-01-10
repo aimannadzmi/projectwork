@@ -217,6 +217,7 @@ strong{
 }
 #overview {
 	text-align: center;
+	/*border-style: solid;*/
 	font-family: 'Anton', sans-serif;
 	padding: 0px;
 }
@@ -232,15 +233,17 @@ font-family: 'Staatliches', cursive;
 	text-align: center;
 	position: center;
 }
+#/*playerName, #playerInjury {
+	margin: 50px;
+
+}*/
 
 #players {
 	text-align: left;
 }
-
-#home1, #away1, #source1 {
-	padding-bottom: 25px;
+#home1 {
+	padding-bottom: 10px;
 }
-
 @media screen and (min-width: 1400px) {
 
     #container { 

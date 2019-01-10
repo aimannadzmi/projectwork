@@ -1,0 +1,99 @@
+.jumbotron {
+    height: 200px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: white;
+    font-family: 'Staatliches', cursive;
+    background-image: url("bbball.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid black;
+    width: 55%
+}
+.btn-dark{
+    margin-bottom: 8px;
+    margin-right: 2px;
+}
+.container{
+   margin-bottom: 25px;
+}
+#marginTop{
+    margin-top: 50px
+}
+#removeSelected{
+    float: right;
+}
+#showPassword{
+    width: auto;
+    margin: 5px;
+}
+.jumbotron{
+    margin-bottom: 0px;
+}
+
+.col-sm-5{
+    background-color:lightgray;
+    margin-right: 10px;
+}
+.col-sm-3{
+    background-color:lightsalmon;
+}
+#signin {
+	position: relative;	
+    left: 90%;
+    top: -75px;
+}
+#logout{
+	position: relative;	
+	left: 90%;
+    top: -75px;
+}
+#page {
+    color: orange;
+}
+#navbar {
+    border: solid;
+    border-color: white;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    color: black;
+    background-color: white;
+    font-family: 'Anton', sans-serif;
+    letter-spacing: .09em;
+    font-size: 18px;
+}
+strong{
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    bottom: -1px
+}
+#scoreC{
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightgreen;
+    position: relative;
+    bottom: -1px
+}
+#scoreI{
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightsteelblue;
+    position: relative;
+    bottom: -1px
+}
+.carousel-inner{
+    background-color: orange;
+    height: 30px;
+}
+.col-sm-1{
+    position: relative;
+    bottom: -6px
+}
