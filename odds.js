@@ -116,8 +116,8 @@ $(document).ready(function () {
                 var newRow4 = $('<tr>');
                 var newRow5 = $('<tr>');
 
-                var homeScore1 = homeTeamScore;
-                var awayScore1 = awayTeamScore;
+                var homeTeamScore1 = homeTeamScore;
+                var awayTeamScore1 = awayTeamScore;
 
                 var homeTeamCity = response.scoreboard.gameScore[i].game.homeTeam.City;
                 var homeTeamName = response.scoreboard.gameScore[i].game.homeTeam.Name;
@@ -185,7 +185,7 @@ $(document).ready(function () {
                 newDiv5.append(newRow5);
                 newRow5.append(awayImage);
                 $('#awayLogo').append(newRow5);
-    
+
 
             }
         })
@@ -401,6 +401,8 @@ $(document).ready(function () {
                 var newRow6 = $("<tr>");
                 var newRow7 = $("<tr>");
 
+                var newTD = $("<td>");
+
                 var newDiv = $('<div>');
                 var newDiv2 = $('<div>');
                 var newDiv3 = $('<div>');
@@ -414,6 +416,7 @@ $(document).ready(function () {
                 // newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "<br>" + "Source: " + fetchSites);
                 // newRow.append(newCol);
                 // $("#displayOdds").append(newRow);
+                function appendOdds(){
                 newDiv.attr("id", "homeTeam1");
                 newRow.append(homeTeam);
                 newDiv.append(newRow);
@@ -436,7 +439,7 @@ $(document).ready(function () {
 
                 newDiv5.attr("id", "vSpread");
                 newRow5.append(getVSpread);
-                NewDiv5.append(newRow5);
+                newDiv5.append(newRow5);
                 $("#awaySpread").append(newDiv5);
 
                 newDiv6.attr("id", "vOdds");
@@ -444,10 +447,19 @@ $(document).ready(function () {
                 newDiv6.append(newRow6);
                 $("#awayOdds").append(newDiv6);
 
-                newDiv7.attr("id", "sites");
+                newDiv7.attr("id", "betsites");
                 newRow7.append(fetchSites);
                 newDiv7.append(newRow7);
-                $("betSource").html(newDiv7);
+                $("#betSource").append(newDiv7);
+
+
+                
+                
+                }
+                appendOdds();
+
+
+
 
 
 
