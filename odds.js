@@ -405,6 +405,7 @@ $(document).ready(function () {
                 // newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "<br>" + "Source: " + fetchSites);
                 // newRow.append(newCol);
                 // $("#displayOdds").append(newRow);
+                function appendOdds(){
                 newDiv.attr("id", "homeTeam1");
                 newRow.append(homeTeam);
                 newDiv.append(newRow);
@@ -427,7 +428,7 @@ $(document).ready(function () {
 
                 newDiv5.attr("id", "vSpread");
                 newRow5.append(getVSpread);
-                NewDiv5.append(newRow5);
+                newDiv5.append(newRow5);
                 $("#awaySpread").append(newDiv5);
 
                 newDiv6.attr("id", "vOdds");
@@ -439,8 +440,10 @@ $(document).ready(function () {
                 newRow7.append(fetchSites);
                 newDiv7.append(newRow7);
                 $("betSource").html(newDiv7);
-
+                
                 console.log("test!!");
+                }
+                appendOdds();
 
 
 
