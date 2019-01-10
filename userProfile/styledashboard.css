@@ -146,7 +146,9 @@ strong{
     position: relative;
     bottom: -6px
 }
-
+#myCarousel{
+	background-color: orange;
+}
 #bet {
 font-family: 'Staatliches', cursive;
 }
