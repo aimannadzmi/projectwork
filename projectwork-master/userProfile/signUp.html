@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang='en-us'>
+<head>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Bootstrap CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.1/firebase.js"></script>
+    <!-- JavaScript -->
+    <script src='firebase.js'></script>
+    <!-- CSS -->
+    <link rel='stylesheet' href='styles.css'>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Staatliches" rel="stylesheet">
+</head>
+
+<body>
+   
+    <div class='jumbotron'>
+        <div class='row'>
+            <div class='col-lg'>
+                <a id="signin" href="signIn.html">Sign In</a>
+            <a id="logout" href="index.html">Log Out</a>
+                <h1>Welcome to Bet Buddy</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- navbar -->
+    <div id="navbar" class='container mx-auto'>
+        <div class='row mx-auto'>
+            <div class='col-sm-1'>
+                <a id='page' href="../index.html">Home</a>
+            </div>
+            <div class='col-sm-1'>
+                <a id='page' href="../bettingOdds.html">Odds</a>
+            </div>
+            <div class='col-sm-1'>
+                <a id='page' href="../teams.html">Team</a>
+            </div>
+            <div class='col-sm-1'>
+                <a id='page' href="../sports.html">Sports</a>
+            </div>
+            <div class= 'col-sm-8'>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class= 'container'>
+        <div class= 'row'>
+            <h2>Create your account to view your dashboard.</h2>
+        </div>
+    </div>
+<div class="mx-auto">
+    <div class='container'>
+        <div class='row'>
+            <div class= 'col-md-6'>
+                <label for='fName'>First Name: </label><br>
+                <input placeholder='John' id='fName'>
+            </div>
+            <div class='col-md-6'>
+                <label for='lName'>Last Name: </label><br>
+                <input placeholder='Doe' id='lName'> 
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <label for='email'>Email: </label><br>
+                <input placeholder='johnDoe@gmail.com' id='email'> 
+            </div>
+        </div>
+        <div class='row'>
+            <div class='col-md-6'>
+                <label for='user'>Username: </label><br>
+                <input placeholder='johnDoe01' id='user'>
+            </div>
+            <div class='col-md-6'>
+                <label for='password'>Password: </label><br>
+                <input placeholder='********' type= 'password' id='password'>
+                <div class= 'row'>
+                    <input type= "checkbox" id= 'showPassword'>Show Password
+                </div>
+            </div>
+        </div>
+        <div class='container' id= 'marginTop'>
+            <div class='row'>
+                <div class='col-sm-5'>
+                    <h3>Select (up to) 5 Teams</h3>
+                    <div class='nbateams' id= 'marginTop'></div>
+                </div>
+                <div class='col-sm-3'>
+                     <div id= 'selected'><h3>Selected Teams</h3></div>
+                     <p id= 'selectedTeams' id= 'marginTop'></p>
+                </div>
+            </div>
+            <button id='removeSelected' class='btn-light'>Remove Teams</button>
+        </div>
+        <div id='marginTop'>
+            <div class='row'>
+                <div class='col-md-6'>
+                    <button class= 'btn btn-primary' id= 'submit'>Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div id= 'marginTop'>
+        <div class= 'jumbotron'>
+            <div class='container'>
+                <div class='row'>
+                    <p>Have an account?</p>
+                </div>
+                <div class='row'>
+                    <a id='signup' href='signUp.html'> Sign In</a>
+                </div>
+            </div>
+            <div class= 'row'>
+                <p class= 'col-lg-12'>Footer</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       
+    </script>
+</body>
+
+</html>

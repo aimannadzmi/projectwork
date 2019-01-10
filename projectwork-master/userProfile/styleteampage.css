@@ -1,0 +1,155 @@
+.jumbotron {
+	height: 200px;
+	padding-top: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	color: white;
+	font-family: 'Staatliches', cursive;
+	background-image: url("bbball.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	/*background-size: auto;*/
+	/*resize: both;*/
+}
+
+#navbar {
+	border: solid;
+	border-color: white;
+	/*padding: 0px;*/
+	padding-top: 15px;
+	padding-bottom: 13px;
+	color: black;
+	background-color: white;
+	font-family: 'Anton', sans-serif;
+	letter-spacing: .09em;
+	font-size: 18px;
+}
+
+#page {
+	color: orange;
+	word-spacing: 10px;
+}
+
+#signin {
+	position: relative;	
+	/*left: 90%;*/
+	position: relative;	
+	left: 1000px;
+	color: white;
+}
+
+#logout{
+	position: relative;	
+	left: 90%;
+}
+
+#currentGames {
+	width: 1000px;
+	height: 1000px;
+	margin-left: 20px;
+	padding: 20px;
+	float:left;
+	position: absolute;
+
+}
+
+#defaultGames {
+	margin-left: 20px;
+	padding: 20px;
+	float:left;
+	position: absolute;
+
+}
+
+#searchteams {
+	margin-bottom: 20px;
+}
+
+#profile {
+	position: relative;	
+	left: 900px;
+
+}
+
+table th {
+	text-align: left;
+	padding: 20px;
+	border: solid;
+
+}
+
+form {
+	margin-left: 30px;
+	margin-bottom: 20px;
+
+}
+
+#dropdown{
+	text-align: left;
+}
+
+
+
+#teamSel {
+	position: absolute;
+	margin-left: 100px;
+	font-family: 'Anton', sans-serif;
+}
+
+#displayOdds {
+	margin-right: 100px;
+	float: right;
+	position: relative;
+
+}
+.selectedTeam{
+	margin: 10px;
+}
+
+strong{
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    bottom: -1px
+}
+
+#scoreC {
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightgreen;
+    position: relative;
+    bottom: -1px
+}
+#scoreI{
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightsteelblue;
+    position: relative;
+    bottom: -1px
+}
+.carousel-inner{
+    height: 30px;
+}
+.col-sm-1{
+    position: relative;
+    bottom: -6px
+}
+
+#bet {
+font-family: 'Staatliches', cursive;
+}
+
+@media screen and (min-width: 1400px) {
+
+    #container { 
+    	width: 100% 
+    }
+
+    .display-4 {
+    	left: 80px;
+    	position: fixed;
+    }
+
+}
