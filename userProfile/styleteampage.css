@@ -6,10 +6,10 @@
 	color: white;
 	font-family: 'Staatliches', cursive;
 	background-image: url("bbball.jpg");
-	/*background-attachment: fixed;*/
+	background-attachment: fixed;
 	background-repeat: no-repeat;
 	/*background-size: auto;*/
-	resize: both;
+	/*resize: both;*/
 }
 
 #navbar {
@@ -52,24 +52,13 @@
 	position: absolute;
 
 }
-#pastGames {
-	left: 10%;
-	font-family: 'Anton', sans-serif;
 
-}
-
-#gameDate {
+#defaultGames {
+	margin-left: 20px;
 	padding: 20px;
+	float:left;
 	position: absolute;
-	object-position: center;
-	text-align: center;
-	
 
-}
-#myCarousel {
-	background-color: orange;
-	font-family: 'Anton', sans-serif;
-	letter-spacing: 2px;
 }
 
 #searchteams {
@@ -83,22 +72,10 @@
 }
 
 table th {
-	/*text-align: center;*/
+	text-align: left;
 	padding: 20px;
-	margin: 100px;
-	width: 1000px;
-	font-size:20px;
-	word-spacing: 5px;
-	letter-spacing: 2px;
-	text-align: center;
+	border: solid;
 
-}
-
-table td {
-	text-align: center;
-	word-spacing: 5px;
-	letter-spacing: 2px;
-	
 }
 
 form {
@@ -106,16 +83,12 @@ form {
 	margin-bottom: 20px;
 
 }
-#drop{
-	margin-top: 20px;
-}
+
 #dropdown{
 	text-align: left;
 }
 
-#scoreCarousel{
-	background-color: orange;
-}
+
 
 #teamSel {
 	position: absolute;
@@ -127,7 +100,6 @@ form {
 	margin-right: 100px;
 	float: right;
 	position: relative;
-	font-family: 'Anton', sans-serif;
 
 }
 .selectedTeam{
@@ -149,7 +121,6 @@ strong{
     position: relative;
     bottom: -1px
 }
-
 #scoreI{
     border: 2px solid black;
     padding-right: 2px;
@@ -165,85 +136,11 @@ strong{
     position: relative;
     bottom: -6px
 }
-#logoimage1{
-	margin-top: 70px;
-	margin-bottom: 30px;
-}
-
-#logoimage2 {
-	margin-top: 70px;
-	margin-bottom: 30px;
-	left: 5%;
-}
-
-#homeDiv {
-	margin-top: 60px;
-	margin-bottom: 110px;
-	text-align: center;
-}
-
-#awayDiv {
-	margin-top: 60px;
-	margin-bottom: 110px;
-	text-align: center;
-}
-#div2 {
-	margin-top: 20px;
-	margin-bottom: 30px;
-}
-
-#div3 {
-	margin-top: 20px;
-}
-#game {
-	margin-top: 10px;
-	margin-bottom: 120px;
-	text-align: right;
-}
-
-#homeScore{
-	text-align: center;
-}
-
-#row1 {
-	margin-bottom: 20px;
-}
-#row2{
-	margin-top: 10px;
-}
-
-#gameDate{
-	left: 320px;
-}
-#overview {
-	text-align: center;
-	/*border-style: solid;*/
-	font-family: 'Anton', sans-serif;
-	padding: 0px;
-}
-h3 {
-	font-family: 'Anton', sans-serif;
-}
 
 #bet {
 font-family: 'Staatliches', cursive;
 }
 
-.col {
-	text-align: center;
-	position: center;
-}
-#/*playerName, #playerInjury {
-	margin: 50px;
-
-}*/
-
-#players {
-	text-align: left;
-}
-#home1 {
-	padding-bottom: 10px;
-}
 @media screen and (min-width: 1400px) {
 
     #container { 
@@ -252,7 +149,7 @@ font-family: 'Staatliches', cursive;
 
     .display-4 {
     	left: 80px;
-    	position: absolute;
+    	position: fixed;
     }
 
 }

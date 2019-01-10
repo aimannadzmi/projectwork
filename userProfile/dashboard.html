@@ -5,7 +5,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap CDN-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    
+    <!-- CSS -->
+    <link rel='stylesheet' href='style.css'>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
@@ -16,11 +18,19 @@
     <!-- JavaScript -->
     <script src='firebase.js'></script>
     <!-- CSS -->
-    <link rel='stylesheet' href='styles.css'>
+    <link rel='stylesheet' href='styledashboard.css'>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Anton|Staatliches" rel="stylesheet">
 </head>
 <body>
     <div class= 'jumbotron'>
         <div class= 'row'>
+            <div class= 'container'>
+        <div class= 'row'>
+            <div id= 'welcomeUser'>
+            </div>
+        </div>
+    </div>
         <a id="logout" href="signIn.html">Log Out</a>
             <h3 id= 'title'></h3>
         </div>
@@ -33,7 +43,7 @@
                     <a id='page' href="../index.html">Home</a>
                 </div>
                 <div class='col-sm-1'>
-                    <a id='page' href="index.html">Scores</a>
+                    <a id='page' href="../bettingOdds.html">Odds</a>
                 </div>
                 <div class='col-sm-1'>
                     <a id='page' href="../teams.html">Team</a>
@@ -51,15 +61,8 @@
             </div>
         </div>
 
-
     <div class= 'container'>
-        <div class= 'row'>
-            <div id= 'welcomeUser'>
-            </div>
-        </div>
-    </div>
-    <div class= 'container'>
-        <div class= 'row'>
+        <div class= 'row mx-auto' id="title">
             <h3>Selected Teams</h3>
             <div id= 'selectedTeam'></div>
         </div>
@@ -67,7 +70,7 @@
             <div id= 'previousGames'></div>
         </div>
         </div>
-        <div class= 'col-lg-8'>
+        <div class= 'col-lg-8 mx-auto'>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -86,7 +89,7 @@
                         </tr>
 
                     </tbody>
-            </tabel>
+            </table>
         </div>
     </div>
 </body>

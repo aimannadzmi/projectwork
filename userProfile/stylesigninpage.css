@@ -1,0 +1,86 @@
+.jumbotron {
+	height: 200px;
+	padding-top: 20px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	color: white;
+	font-family: 'Staatliches', cursive;
+	background-image: url("bbball.jpg");
+	/*background-attachment: fixed;*/
+	background-repeat: no-repeat;
+	/*background-size: auto;*/
+	resize: both;
+}
+
+
+#navbar {
+	border: solid;
+	border-color: white;
+	/*padding: 0px;*/
+	padding-top: 15px;
+	padding-bottom: 20px;
+	color: black;
+	background-color: white;
+	font-family: 'Anton', sans-serif;
+	letter-spacing: .09em;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+
+#usersignin {
+	margin-top: 20px;	
+}
+
+#page {
+	color: orange;
+	word-spacing: 10px;
+}
+
+#scoreC {
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightgreen;
+    position: relative;
+    bottom: -1px
+}
+#scoreI{
+    border: 2px solid black;
+    padding-right: 2px;
+    padding-left: 2px;
+    background-color: lightsteelblue;
+    position: relative;
+    bottom: -1px
+}
+.carousel-inner{
+    height: 30px;
+    background-color: orange;
+}
+.col-sm-1{
+    position: relative;
+    bottom: -6px
+}
+
+strong{
+    padding-right: 10px;
+    padding-left: 10px;
+    position: relative;
+    bottom: -1px
+}
+
+#bet {
+font-family: 'Staatliches', cursive;
+}
+
+@media screen and (min-width: 1400px) {
+
+    #container { 
+    	width: 100% 
+    }
+
+    #title {
+    	left: 80px;
+    	position: fixed;
+    }
+
+}
