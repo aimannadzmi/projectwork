@@ -48,7 +48,7 @@ $(document).ready(function () {
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response) {
@@ -91,11 +91,11 @@ $(document).ready(function () {
         $.ajax
         ({
           method: "GET",
-          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/scoreboard.json?fordate=20190107',
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/scoreboard.json?fordate=' + today,
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response) {
@@ -104,7 +104,17 @@ $(document).ready(function () {
                 var game = $('<div>');
                 var home = $('<div>');
                 var away = $('<div>');
+                var newDiv = $('<div>');
+                var newDiv2 = $('<div>');
+                var newDiv3 = $('<div>');
+                var newDiv4 = $('<div>');
+                var newDiv5 = $('<div>');
 
+                var newRow = $('<tr>');
+                var newRow2 = $('<tr>');
+                var newRow3 = $('<tr>');
+                var newRow4 = $('<tr>');
+                var newRow5 = $('<tr>');
 
                 var homeTeamCity = response.scoreboard.gameScore[i].game.homeTeam.City;
                 var homeTeamName = response.scoreboard.gameScore[i].game.homeTeam.Name;
@@ -125,18 +135,49 @@ $(document).ready(function () {
 
                 console.log(homeTeamName);
 
-                game.html('<br>' + gameDate + ' ' + gameTime);
+                game.attr("id", "game");
+                game.html('<br>' + gameDate + '<br>' + gameTime);
+
+                home.attr("id", "homeDiv");
                 home.append(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore);
+
+                away.attr("id", "awayDiv");
                 away.html(awayTeamCity + ' ' + awayTeamName + ': ' + awayTeamScore);
 
-                $('#defaultGames').append(game)
-                $('#defaultGames').append(home)
-                $('#defaultGames').append(away)
+                // newTD.append(homeImage);
+                homeImage.attr("id", "logoimage1");
+                newDiv.append(newRow);
+                newRow.append(homeImage);
+                $("#homeLogo").append(newRow);
 
 
+                // newTD2.append(home);
+                newDiv2.attr("id", "div2");
+                newRow2.attr("id", "row2");
+                newDiv2.append(newRow2);
+                newRow2.append(home);
+                $('#homeScore').append(newRow2);
 
-                $("#defaultGames").append(homeImage, "<div class='vs'> vs.  </div>", awayImage);
-               
+                // newTD3.append(game);
+                newDiv3.attr("id", "div3");
+                newDiv3.append(newRow3);
+                newRow3.append(game);
+                $('#gameDate').append(newRow3);
+
+                
+                // newTD4.append(away);
+                newDiv4.attr("id", "div4");
+                newDiv4.append(newRow4);
+                newRow4.append(away)
+                $('#awayScore').append(newRow4);
+
+                // newTD5.append(awayImage)
+                awayImage.attr("id", "logoimage2");
+                newDiv5.append(newRow5);
+                newRow5.append(awayImage);
+                $('#awayLogo').append(newRow5);
+
+
             }
         })
 
@@ -159,7 +200,7 @@ $(document).ready(function () {
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response2) {
@@ -207,6 +248,64 @@ $(document).ready(function () {
     }
     pullGames();
 
+    function upcomingGames() {
+        $('#submitTeam').on('click', function () {
+        teamAbb = $('#teamSel').val().trim()
+        var date = 'until-5-days-from-now'
+
+        $.ajax
+        ({
+          method: "GET",
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/full_game_schedule.json?team=' + teamAbb + '&date=' + date,
+          dataType: 'json',
+          async: false,
+          headers: {
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
+          },
+
+        }).then(function (response2) {
+        console.log(response2)
+
+        for (var i = 0; i < response2.fullgameschedule.gameentry.length; i++) {
+
+            var game = $('<p>')
+            var team = $('<p>')
+            var otherTeam = $('<p>')
+            
+            console.log('UPCOMING')
+            var homeTeamCity = response2.fullgameschedule.gameentry[i].homeTeam.City;
+            var homeTeamName = response2.fullgameschedule.gameentry[i].homeTeam.Name;
+            console.log(response2.fullgameschedule.gameentry[0].homeTeam.City)
+            var awayTeamCity = response2.fullgameschedule.gameentry[i].awayTeam.City;
+            var awayTeamName = response2.fullgameschedule.gameentry[i].awayTeam.Name;
+
+            var gameDate = response2.fullgameschedule.gameentry[i].date;
+            var gameTime = response2.fullgameschedule.gameentry[i].time;
+            
+            if (teamAbb.toUpperCase() == response2.fullgameschedule.gameentry[i].homeTeam.Abbreviation) {
+                console.log(teamAbb)
+                team.text(homeTeamCity + ' ' + homeTeamName);
+                otherTeam.text(awayTeamCity + ' ' + awayTeamName);
+            } else {
+                team.text(awayTeamCity + ' ' + awayTeamName);
+                otherTeam.text(homeTeamCity + ' ' + homeTeamName)
+            }
+
+            game.text(gameDate + ' ' + gameTime);
+            console.log(game)
+            
+            $('#currentGames').prepend(game, '<br>', team, '<br>', otherTeam);
+
+            console.log(game, team)
+        }   
+
+        })
+
+
+    })
+    }
+    upcomingGames();
+
     function injuries() {
         $('#submitTeam').on('click', function () {
         
@@ -219,7 +318,7 @@ $(document).ready(function () {
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response) {
@@ -227,14 +326,23 @@ $(document).ready(function () {
             
             for (var i = 0; i < response.playerinjuries.playerentry.length; i++) {
                 var newEntry = $('<div>');
+                var newEntry2 = $('<div>');
+                var newRow = $("<tr>");
+                var newRow2 = $("<tr>");
 
                 var fn = response.playerinjuries.playerentry[i].player.FirstName;
                 var ln = response.playerinjuries.playerentry[i].player.LastName;
                 var injury = response.playerinjuries.playerentry[i].injury;
                 
-                newEntry.html(fn + ' ' + ln + '<br>' + injury)
+                newEntry.attr("id", "playerName");
+                newEntry.html(fn + ' ' + ln);
+                newRow.append(newEntry);
+                $('#playerNames').prepend(newEntry);
 
-                $('#playerInjury').prepend(newEntry, '<br>')
+                newEntry.attr("id", "playerInjury");
+                newEntry2.html(injury);
+                newRow.append(newEntry2);
+                $('#playerInjuries').prepend(newEntry2);
             }
 
         })
@@ -277,12 +385,56 @@ $(document).ready(function () {
                 // console.log(getSpread);
 
                 var newRow = $("<tr>");
-                var newCol = $("<td>");
-                newCol.attr("id", "newcol");
-                newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "Source: " + fetchSites);
-                newRow.append(newCol);
-                $("#displayOdds").append(newRow);
+                var newRow2 = $("<tr>");
+                var newRow3 = $("<tr>");
+                var newRow4 = $("<tr>");
+                var newRow5 = $("<tr>");
+                var newRow6 = $("<tr>");
+                var newRow7 = $("<tr>");
+
+                var newDiv = $('<div>');
+                var newDiv2 = $('<div>');
+                var newDiv3 = $('<div>');
+                var newDiv4 = $('<div>');
+                var newDiv5 = $('<div>');
+                var newDiv6 = $('<div>');
+
+                // var newCol = $("<td>");
+                // newCol.attr("id", "newcol");
+                // newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "<br>" + "Source: " + fetchSites);
+                // newRow.append(newCol);
+                // $("#displayOdds").append(newRow);
+                newDiv.attr("id", "homeBet1");
+                newDiv.append(newRow);
+                newRow.append(homeTeam);
+                $("#homeBet").append(newRow);
+
+                
+                newRow2.append(visitorTeam);
+                $("#awayBet").append(newRow2);
+
+                newRow3.append(getHSpread);
+                $("#homeSpread").append(newRow3);
+
+                newRow4.append(fetchHOdds);
+                $("#homeOdds").append(newRow4);
+
+                newRow5.append(getVSpread);
+                $("#awaySpread").append(newRow3);
+
+                newRow6.append(fetchVOdds);
+                $("#awayOdds").append(newRow4);
+
+                newRow7.append(fetchSites);
+                $("betSource").append(newRow7);
+
+
+
+
+
+
             }
         });
 
 });
+

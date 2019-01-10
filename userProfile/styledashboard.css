@@ -78,7 +78,9 @@ table th {
 	border: solid;
 
 }
-
+h3 {
+	font-family: 'Anton', sans-serif;
+}
 form {
 	margin-left: 30px;
 	margin-bottom: 20px;
