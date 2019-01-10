@@ -116,6 +116,9 @@ $(document).ready(function () {
                 var newRow4 = $('<tr>');
                 var newRow5 = $('<tr>');
 
+                var homeTeamScore1 = homeTeamScore;
+                var awayTeamScore1 = awayTeamScore;
+
                 var homeTeamCity = response.scoreboard.gameScore[i].game.homeTeam.City;
                 var homeTeamName = response.scoreboard.gameScore[i].game.homeTeam.Name;
 
@@ -138,11 +141,17 @@ $(document).ready(function () {
                 game.attr("id", "game");
                 game.html('<br>' + gameDate + '<br>' + gameTime);
 
+                if(homeTeamScore || awayTeamScore
+                    == undefined) {
+                    homeTeamScore1 = 0;
+                    awayTeamScore1 = 0;
+                }
+
                 home.attr("id", "homeDiv");
-                home.append(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore);
+                home.append(homeTeamCity + ' ' + homeTeamName + ': ' + homeTeamScore1);
 
                 away.attr("id", "awayDiv");
-                away.html(awayTeamCity + ' ' + awayTeamName + ': ' + awayTeamScore);
+                away.html(awayTeamCity + ' ' + awayTeamName + ': ' + awayTeamScore1);
 
                 // newTD.append(homeImage);
                 homeImage.attr("id", "logoimage1");
