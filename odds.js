@@ -48,7 +48,7 @@ $(document).ready(function () {
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response) {
@@ -91,11 +91,11 @@ $(document).ready(function () {
         $.ajax
         ({
           method: "GET",
-          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/scoreboard.json?fordate=20190107',
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/scoreboard.json?fordate=' + today,
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response) {
@@ -159,7 +159,7 @@ $(document).ready(function () {
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response2) {
@@ -207,6 +207,64 @@ $(document).ready(function () {
     }
     pullGames();
 
+    function upcomingGames() {
+        $('#submitTeam').on('click', function () {
+        teamAbb = $('#teamSel').val().trim()
+        var date = 'until-5-days-from-now'
+
+        $.ajax
+        ({
+          method: "GET",
+          url: 'https://cors-escape.herokuapp.com/https://api.mysportsfeeds.com/v1.2/pull/nba/2018-2019-regular/full_game_schedule.json?team=' + teamAbb + '&date=' + date,
+          dataType: 'json',
+          async: false,
+          headers: {
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
+          },
+
+        }).then(function (response2) {
+        console.log(response2)
+
+        for (var i = 0; i < response2.fullgameschedule.gameentry.length; i++) {
+
+            var game = $('<p>')
+            var team = $('<p>')
+            var otherTeam = $('<p>')
+            
+            console.log('UPCOMING')
+            var homeTeamCity = response2.fullgameschedule.gameentry[i].homeTeam.City;
+            var homeTeamName = response2.fullgameschedule.gameentry[i].homeTeam.Name;
+            console.log(response2.fullgameschedule.gameentry[0].homeTeam.City)
+            var awayTeamCity = response2.fullgameschedule.gameentry[i].awayTeam.City;
+            var awayTeamName = response2.fullgameschedule.gameentry[i].awayTeam.Name;
+
+            var gameDate = response2.fullgameschedule.gameentry[i].date;
+            var gameTime = response2.fullgameschedule.gameentry[i].time;
+            
+            if (teamAbb.toUpperCase() == response2.fullgameschedule.gameentry[i].homeTeam.Abbreviation) {
+                console.log(teamAbb)
+                team.text(homeTeamCity + ' ' + homeTeamName);
+                otherTeam.text(awayTeamCity + ' ' + awayTeamName);
+            } else {
+                team.text(awayTeamCity + ' ' + awayTeamName);
+                otherTeam.text(homeTeamCity + ' ' + homeTeamName)
+            }
+
+            game.text(gameDate + ' ' + gameTime);
+            console.log(game)
+            
+            $('#currentGames').prepend(game, '<br>', team, '<br>', otherTeam);
+
+            console.log(game, team)
+        }   
+
+        })
+
+
+    })
+    }
+    upcomingGames();
+
     function injuries() {
         $('#submitTeam').on('click', function () {
         
@@ -219,7 +277,7 @@ $(document).ready(function () {
           dataType: 'json',
           async: false,
           headers: {
-            "Authorization": "Basic " + btoa('4b9b56f3-9244-40f1-a108-f02fe9' + ":" + 'palabra11'),
+            "Authorization": "Basic " + btoa('9f0ad004-47be-4b5c-93ce-c24f24' + ":" + 'palabra11'),
           },
 
         }).then(function (response) {
