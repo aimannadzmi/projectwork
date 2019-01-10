@@ -217,6 +217,7 @@ strong{
 }
 #overview {
 	text-align: center;
+	/*border-style: solid;*/
 	font-family: 'Anton', sans-serif;
 	padding: 0px;
 }
@@ -232,15 +233,37 @@ font-family: 'Staatliches', cursive;
 	text-align: center;
 	position: center;
 }
+#home2, #away1, #source1 {
+	padding-bottom: 25px;
+}
+
+#homeTeam1 {
+	margin-bottom: 50px;
+	background-color: inherit;
+}
+tr {
+	background-color: inherit;
+}
+#visitorTeam1 {
+	margin-bottom: 40px;
+}
+
+#betStuff {
+	right:40%;
+}
+
+#hSpread, #hOdds, #vSpread, #vOdds, #betsites {
+	margin-bottom: 70px;
+
+}
+
 
 #players {
 	text-align: left;
 }
-
-#home1, #away1, #source1 {
-	padding-bottom: 25px;
+#home1 {
+	padding-bottom: 10px;
 }
-
 @media screen and (min-width: 1400px) {
 
     #container { 

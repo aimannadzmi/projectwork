@@ -123,6 +123,8 @@ $(document).ready(function () {
             return
         } else if (this.id === 'submit') {
             return
+        } else if (this.id === 'submitTeam') {
+            return
         };
         teamCount++
         if (teamCount <= 5) {
