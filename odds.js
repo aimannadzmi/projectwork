@@ -339,7 +339,7 @@ $(document).ready(function () {
                 newRow.append(newEntry);
                 $('#playerNames').prepend(newEntry);
 
-                newEntry.attr("id", "playerInjury");
+                newEntry2.attr("id", "playerInjury");
                 newEntry2.html(injury);
                 newRow.append(newEntry2);
                 $('#playerInjuries').prepend(newEntry2);
@@ -398,35 +398,49 @@ $(document).ready(function () {
                 var newDiv4 = $('<div>');
                 var newDiv5 = $('<div>');
                 var newDiv6 = $('<div>');
+                var newDiv7 = $('<div>');
 
                 // var newCol = $("<td>");
                 // newCol.attr("id", "newcol");
                 // newCol.append('<br>Home: ' + homeTeam + ' <br>Spread: ' + getHSpread + " <br> Odds: " + fetchHOdds + '<br><br> Visitor: ' + visitorTeam + '<br> Spread: ' + getVSpread + " <br>Odds: " + fetchVOdds + "<br>" + "Source: " + fetchSites);
                 // newRow.append(newCol);
                 // $("#displayOdds").append(newRow);
-                newDiv.attr("id", "homeBet1");
-                newDiv.append(newRow);
+                newDiv.attr("id", "homeTeam1");
                 newRow.append(homeTeam);
-                $("#homeBet").append(newRow);
+                newDiv.append(newRow);
+                $("#homeBet").append(newDiv);
 
-                
+                newDiv2.attr("id", "visitorTeam1");
                 newRow2.append(visitorTeam);
-                $("#awayBet").append(newRow2);
+                newDiv2.append(newRow2)
+                $("#awayBet").append(newDiv2);
 
+                newDiv3.attr("id", "hSpread");
                 newRow3.append(getHSpread);
-                $("#homeSpread").append(newRow3);
+                newDiv3.append(newRow3)
+                $("#homeSpread").append(newDiv3);
 
+                newDiv4.attr("id", "hOdds");
                 newRow4.append(fetchHOdds);
-                $("#homeOdds").append(newRow4);
+                newDiv4.append(newRow4);
+                $("#homeOdds").append(newDiv4);
 
+                newDiv5.attr("id", "vSpread");
                 newRow5.append(getVSpread);
-                $("#awaySpread").append(newRow3);
+                NewDiv5.append(newRow5);
+                $("#awaySpread").append(newDiv5);
 
+                newDiv6.attr("id", "vOdds");
                 newRow6.append(fetchVOdds);
-                $("#awayOdds").append(newRow4);
+                newDiv6.append(newRow6);
+                $("#awayOdds").append(newDiv6);
 
+                newDiv7.attr("id", "sites");
                 newRow7.append(fetchSites);
-                $("betSource").append(newRow7);
+                newDiv7.append(newRow7);
+                $("betSource").html(newDiv7);
+
+                console.log("test!!");
 
 
 
